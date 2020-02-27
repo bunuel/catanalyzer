@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cat Personality Evaluator</string>
+    <string name="select_a_cat_text">Click here to take a picture of the cat you wish to analyze</string>
+    <string name="output_text">Your cat is retarded</string>
+</resources>

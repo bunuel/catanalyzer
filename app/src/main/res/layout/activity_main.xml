@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        tools:context=".MainActivity">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:foregroundGravity="top"
+            android:text=""
+            android:id="@+id/picture_container"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40pt"
+            android:layout_marginBottom="5sp"
+            android:text=""
+            android:gravity="bottom"
+
+            android:textSize="25sp"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/picture_container_text"
+            app:layout_constraintBottom_toBottomOf="@id/picture_container"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+    <Button
+
+            android:text="@string/select_a_cat_text"
+            android:layout_width="90pt"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/walkway"
+
+            android:id="@+id/button_take_a_picture"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@id/picture_container"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginLeft="10pt"
+            tools:layout_editor_absoluteY="610dp"
+            tools:layout_editor_absoluteX="0dp"/>
+
+</android.support.constraint.ConstraintLayout>
