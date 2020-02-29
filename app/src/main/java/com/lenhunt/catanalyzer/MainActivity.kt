@@ -13,6 +13,8 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
+//import com.lenhunt.catanalyzer.R.string
+import com.lenhunt.catanalyzer.R.string.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -91,9 +93,40 @@ class MainActivity : AppCompatActivity() {
             picture_container.setImageURI(image_uri)
 
             // set the text here
-            outputText = setOutputText()
+            //outputText = setOutputText()
 
-            picture_container_text.text = outputText
+            //picture_container_text.text = "+"
+
+            //val values = ContentValues()
+
+            //var string = "@string/output_text_1"
+            //var values1 = "@string/output_text_1"
+
+            //val output_text_array = arrayOf(String())
+
+            //var output_text_text = String()
+
+            //output_text_array.plusElement(R.string.output_text_1.toString())
+
+            //var output_text_text = R.string.output_text_1.toString().plus(R.string.location_text.toString()).plus(R.string.output_text_2.toString()).plus(R.string.personality_text.toString()).plus(R.string.output_text_3.toString()).plus(R.string.history.toString())
+
+            //var outputTextText:String = R.string.output_text_1.toString()
+/*
+            output_text_text +=  R.string.output_text_1.toString()
+            //output_text_array.push(R.string.output_text_1.toString())
+            output_text_text +=  R.string.location_text.toString()
+            output_text_text +=  R.string.output_text_2.toString()
+            output_text_text +=  R.string.personality_text.toString()
+            output_text_text +=  R.string.output_text_3.toString()
+            output_text_text +=  R.string.history.toString()
+            */
+
+
+            //picture_container_text.text = output_text_1.toString()
+
+            //val string: String = getString(R.string.your_string_id)
+
+            picture_container_text.text = getString(output_text_1).plus(" ").plus(getString(location_text)).plus(getString(output_text_2)).plus(" ").plus(getString(personality_text)).plus(getString(output_text_3)).plus(" ").plus(getString(history))
 
             button_take_a_picture.visibility = View.INVISIBLE
 
@@ -103,8 +136,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setOutputText(): String {
-        return("Your cat is retarded");
-    }
+    //private fun setOutputText(): String = ("@string/)
+
+
 
 }
