@@ -19,12 +19,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val PERMISSION_CODE = 1000;
+    private val PERMISSION_CODE = 1000
     private val IMAGE_CAPTURE_CODE = 1001
     var image_uri: Uri? = null
     //private var output_text = "@string/output_text"
 
-    var outputText = ""
+    //var outputText = ""
 
 
 
@@ -90,49 +90,16 @@ class MainActivity : AppCompatActivity() {
         //called when image was captured from camera intent
         if (resultCode == Activity.RESULT_OK){
             //set image captured to image view
+
             picture_container.setImageURI(image_uri)
-
-            // set the text here
-            //outputText = setOutputText()
-
-            //picture_container_text.text = "+"
-
-            //val values = ContentValues()
-
-            //var string = "@string/output_text_1"
-            //var values1 = "@string/output_text_1"
-
-            //val output_text_array = arrayOf(String())
-
-            //var output_text_text = String()
-
-            //output_text_array.plusElement(R.string.output_text_1.toString())
-
-            //var output_text_text = R.string.output_text_1.toString().plus(R.string.location_text.toString()).plus(R.string.output_text_2.toString()).plus(R.string.personality_text.toString()).plus(R.string.output_text_3.toString()).plus(R.string.history.toString())
-
-            //var outputTextText:String = R.string.output_text_1.toString()
-/*
-            output_text_text +=  R.string.output_text_1.toString()
-            //output_text_array.push(R.string.output_text_1.toString())
-            output_text_text +=  R.string.location_text.toString()
-            output_text_text +=  R.string.output_text_2.toString()
-            output_text_text +=  R.string.personality_text.toString()
-            output_text_text +=  R.string.output_text_3.toString()
-            output_text_text +=  R.string.history.toString()
-            */
-
-
-            //picture_container_text.text = output_text_1.toString()
-
-            //val string: String = getString(R.string.your_string_id)
-
-            picture_container_text.text = getString(output_text_1).plus(" ").plus(getString(location_text)).plus(getString(output_text_2)).plus(" ").plus(getString(personality_text)).plus(getString(output_text_3)).plus(" ").plus(getString(history))
-
-            button_take_a_picture.visibility = View.INVISIBLE
-
-            //picture_container_text.setText("@string/output_text")
-
-
+            //picture_container.
+            var text_to_output: String = getString(output_text_1).plus(" ").plus(getString(location_text)).plus(getString(output_text_2)).plus(" ").plus(getString(personality_text)).plus(getString(output_text_3)).plus(" ").plus(getString(history))
+            //button_take_a_picture.visibility = View.INVISIBLE
+            if (BuildConfig.DEBUG == true) {
+                text_to_output = text_to_output.plus(image_uri.toString())
+                text_to_output = text_to_output.plus(picture_container.height.toString())
+            }
+            picture_container_text.text = text_to_output
         }
     }
 
