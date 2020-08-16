@@ -2,12 +2,24 @@
     <string name="app_name">Cat Personality Evaluator</string>
     <string name="select_a_cat_text">Take a cat picture</string>
 
-    <string name="location_text">Omaha Nebraska</string>
+
     <string name="personality_text">angrily defiant</string>
     <string name="history">helping with the "Underground Railroad" somehow</string>
 
     <string name="output_text_1">This delightful cat\'s ancient relatives resided in </string>
-    <string name="output_text_2">. The disposition of the breed is generally </string>
-    <string name="output_text_3">. Their notable achievements include: </string>
+    <string name="output_text_2">The disposition of the breed is generally </string>
+    <string name="output_text_3">Their notable achievements include: </string>
+    <string-array name="locations">
+        <item>Omaha Nebraska</item>
+        <item>Upper West Side</item>
+        <item>New Orleans</item>
+        <item>Eastern Siberia</item>
+        <item>Cadillac Ranch</item>
+        <item>Haight Ashbury</item>
+        <item>Argentina</item>
+        <item>Wakanda</item>
+        <item>Up the Wooden Hills to Bedfordshire</item>
+        <item>The food court</item>
+    </string-array>
 
 </resources>
