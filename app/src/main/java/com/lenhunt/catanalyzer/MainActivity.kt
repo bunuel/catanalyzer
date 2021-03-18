@@ -1,19 +1,17 @@
 package com.lenhunt.catanalyzer
 
-
 import android.Manifest
 import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Resources
 import android.net.Uri
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.lenhunt.catanalyzer.R.string.*
-import com.lenhunt.catanalyzer.R.array.locations
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -85,47 +83,34 @@ class MainActivity : AppCompatActivity() {
             //set image captured to image view
             picture_container.setImageURI(_imageURI)
 
-            //val values = ContentValues()
+            val randomNumber: Int = (0 until 10).random()
 
-            //val randomNumbers: MutableList<Int> = getRandomNumber(3);
+            val res: Resources = resources
 
-            val randomNumber = (0 until 10).random()
-            val locationText: String = getString(locations[(randomNumber)])
+            val locationStringArray = res.getStringArray(R.array.locations)
+            val personalityStringArray = res.getStringArray(R.array.personality_text)
+            val historyStringArray = res.getStringArray(R.array.history)
 
-            //randomNumber = (0 until 10).random()
+            val selectedLocation = locationStringArray[randomNumber]
+            val selectedPersonality = personalityStringArray[(0 until 10).random()]
+            val selectedHistory = historyStringArray[(0 until 10).random()]
 
-           //var location_text: String = getString("location_00".plus(firstRandomNumber))
+            val locationText = "${res.getString(R.string.output_text_1)}${selectedLocation}. ${res.getString(R.string.output_text_2)}${selectedPersonality}. ${res.getString(R.string.output_text_3)}${selectedHistory}."
+            var textToOutput = locationText.plus("\n")
 
-            //arrayOf(values.[values.[]])
-            var textToOutput: String = getString(output_text_1).plus("\n").plus(locationText).plus("\n").plus(getString(output_text_2)).plus(" ").plus(getString(personality_text)).plus("\n").plus(getString(output_text_3)).plus(" ").plus(getString(history)).plus("\n")
-            //button_take_a_picture.visibility = View.INVISIBLE
             if (BuildConfig.DEBUG) {
-                textToOutput = textToOutput.plus(_imageURI.toString())
-                textToOutput = textToOutput.plus("    ").plus(picture_container.height.toString())
+                //textToOutput = textToOutput.plus(_imageURI.toString())
+                //textToOutput = textToOutput.plus("\nSize of Array arr is: ${locationStringArray.size}\n").plus(picture_container.height.toString())
             }
             picture_container_text.text = textToOutput
         }
     }
 
-    //
-    //private fun getRandomNumber(numberOfTimes: Int) : MutableList<Int> {
-        //val list: MutableList<Int> = ArrayList(numberOfTimes)
 
-        //list = (0 until 10).random()
-        //for (i in 1..numberOfTimes) {
-            // for() {
-            //add(0 until 10).random().ArrayList()
-            //list[i] = (0 until 10).random()
-            //list += (0 until 10).random()
-       //}
-
-        //return list
-        //}
-    //}
 
 }
 
-private operator fun Int.get(i: Int): Int {
-    return i
-}
+
+
+
 

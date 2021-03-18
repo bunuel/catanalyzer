@@ -2,13 +2,10 @@
     <string name="app_name">Cat Personality Evaluator</string>
     <string name="select_a_cat_text">Take a cat picture</string>
 
+    <string name="output_text_1">"This cat\'s ancient relatives resided near "</string>
+    <string name="output_text_2">"The disposition of the breed is generally "</string>
+    <string name="output_text_3">"Notable historical events include: "</string>
 
-    <string name="personality_text">angrily defiant</string>
-    <string name="history">helping with the "Underground Railroad" somehow</string>
-
-    <string name="output_text_1">This delightful cat\'s ancient relatives resided in </string>
-    <string name="output_text_2">The disposition of the breed is generally </string>
-    <string name="output_text_3">Their notable achievements include: </string>
     <string-array name="locations">
         <item>Omaha Nebraska</item>
         <item>Upper West Side</item>
@@ -21,5 +18,34 @@
         <item>Up the Wooden Hills to Bedfordshire</item>
         <item>The food court</item>
     </string-array>
+
+    <string-array name="personality_text">
+        <item>angrily defiant</item>
+        <item>warm, approachable</item>
+        <item>glumly obedient</item>
+        <item>degenerate gambler</item>
+        <item>compulsive sniffer</item>
+        <item>plus sized</item>
+        <item>bilius in attitude and vomit</item>
+        <item>call of the wild listener</item>
+        <item>photographic memory</item>
+        <item>stoner</item>
+    </string-array>
+
+    <string-array name="history">
+        <item>helping with the "Underground Railroad" somehow</item>
+        <item>evolved from pangolins</item>
+        <item>subspecies nearly wiped out in Chicago Fire</item>
+        <item>conspiring with the conquerors</item>
+        <item>Anti-temperance organizer</item>
+        <item>first cat to work at Sterling Cooper</item>
+        <item>wrote operas with Lloyd Weber</item>
+        <item>ate hallucinogens with the Partridge Family</item>
+        <item>anti-communist rabblerouser</item>
+        <item>the backup cat subspecies for the Meow Mix commercial</item>
+    </string-array>
+
+
+
 
 </resources>
