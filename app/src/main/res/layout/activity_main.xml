@@ -9,12 +9,11 @@
         android:background="@color/colorBackground"
         tools:context=".MainActivity">
 
-
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/picture_container"
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="80sp"
             android:background="@color/colorBackground"
             android:foregroundGravity="top"
             app:layout_constraintTop_toTopOf="parent"
@@ -22,9 +21,10 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
            />
+
     <TextView
             android:layout_width="400sp"
-            android:layout_height="125sp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
             android:layout_marginBottom="5sp"
             android:layout_marginLeft="5sp"
@@ -33,20 +33,16 @@
             app:fontFamily="@font/proxima"
             android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textColor="@color/colorPrimaryDark"
             android:id="@+id/picture_container_text"
             android:background="@color/colorSecondary"
             app:layout_constraintTop_toTopOf="parent"
-
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             />
 
-
-
     <Button
-
             android:text="@string/select_a_cat_text"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"
@@ -65,7 +61,5 @@
             android:layout_marginLeft="10sp"
             tools:layout_editor_absoluteY="610dp"
             tools:layout_editor_absoluteX="0dp"/>
-
-
 
 </android.support.constraint.ConstraintLayout>

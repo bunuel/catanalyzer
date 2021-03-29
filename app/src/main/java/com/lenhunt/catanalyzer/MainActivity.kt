@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(cameraIntent, _imageCaptureCode)
     }
 
-
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         //called when user presses ALLOW or DENY from Permission Request Popup
         when(requestCode){
@@ -83,20 +82,15 @@ class MainActivity : AppCompatActivity() {
             //set image captured to image view
             picture_container.setImageURI(_imageURI)
 
-            val randomNumber: Int = (0 until 10).random()
-
             val res: Resources = resources
-
             val locationStringArray = res.getStringArray(R.array.locations)
             val personalityStringArray = res.getStringArray(R.array.personality_text)
             val historyStringArray = res.getStringArray(R.array.history)
+            val selectedLocation = locationStringArray[(locationStringArray.indices).random()]
+            val selectedPersonality = personalityStringArray[(personalityStringArray.indices).random()]
+            val selectedHistory = historyStringArray[(historyStringArray.indices).random()]
 
-            val selectedLocation = locationStringArray[randomNumber]
-            val selectedPersonality = personalityStringArray[(0 until 10).random()]
-            val selectedHistory = historyStringArray[(0 until 10).random()]
-
-            val locationText = "${res.getString(R.string.output_text_1)}${selectedLocation}. ${res.getString(R.string.output_text_2)}${selectedPersonality}. ${res.getString(R.string.output_text_3)}${selectedHistory}."
-            var textToOutput = locationText.plus("\n")
+            val textToOutput = "${res.getString(R.string.output_text_1)}${selectedLocation}. ${res.getString(R.string.output_text_2)}${selectedPersonality}. ${res.getString(R.string.output_text_3)}${selectedHistory}."
 
             if (BuildConfig.DEBUG) {
                 //textToOutput = textToOutput.plus(_imageURI.toString())
@@ -105,9 +99,6 @@ class MainActivity : AppCompatActivity() {
             picture_container_text.text = textToOutput
         }
     }
-
-
-
 }
 
 

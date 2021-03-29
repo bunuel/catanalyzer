@@ -3,7 +3,7 @@
     <string name="select_a_cat_text">Take a cat picture</string>
 
     <string name="output_text_1">"This cat\'s ancient relatives resided near "</string>
-    <string name="output_text_2">"The disposition of the breed is generally "</string>
+    <string name="output_text_2">"One distinctive feature of this breed:  "</string>
     <string name="output_text_3">"Notable historical events include: "</string>
 
     <string-array name="locations">
@@ -17,6 +17,19 @@
         <item>Wakanda</item>
         <item>Up the Wooden Hills to Bedfordshire</item>
         <item>The food court</item>
+        <item>Fargo</item>
+        <item>The holy land</item>
+        <item>Mecca</item>
+        <item>Pierce Brosnan’s house</item>
+        <item>Outside Cincinnati</item>
+        <item>Euro Disney</item>
+        <item>Westworld</item>
+        <item>Outside Dallas</item>
+        <item>The Suez Canal</item>
+        <item>Waltham MA</item>
+        <item>The Country for Old Men</item>
+        <item>Pangea</item>
+
     </string-array>
 
     <string-array name="personality_text">
@@ -30,6 +43,18 @@
         <item>call of the wild listener</item>
         <item>photographic memory</item>
         <item>stoner</item>
+        <item>Falls asleep easily</item>
+        <item>Can endure extremely cold conditions</item>
+        <item>Can say goodbye unawkwardly and efficiently</item>
+        <item>Can sort complex arrays with an abacus</item>
+        <item>Intuitively hangs pictures evenly</item>
+        <item>Can estimate how many degrees an angle has</item>
+        <item>Read Infinite Jest</item>
+        <item>Eats salamanders</item>
+        <item>Sorts by new</item>
+        <item>Went on one of those Alaska boats one summer</item>
+
+
     </string-array>
 
     <string-array name="history">
@@ -44,8 +69,5 @@
         <item>anti-communist rabblerouser</item>
         <item>the backup cat subspecies for the Meow Mix commercial</item>
     </string-array>
-
-
-
 
 </resources>
