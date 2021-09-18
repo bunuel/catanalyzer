@@ -2,34 +2,42 @@
     <string name="app_name">Cat Personality Evaluator</string>
     <string name="select_a_cat_text">Take a cat picture</string>
 
-    <string name="output_text_1">"This cat\'s ancient relatives resided near "</string>
+    <string name="output_text_1">"This cat\'s ancient relatives resided "</string>
     <string name="output_text_2">"One distinctive feature of this breed:  "</string>
     <string name="output_text_3">"Notable historical events include: "</string>
 
     <string-array name="locations">
-        <item>Omaha Nebraska</item>
-        <item>Upper West Side</item>
-        <item>New Orleans</item>
-        <item>Eastern Siberia</item>
-        <item>Cadillac Ranch</item>
-        <item>Haight Ashbury</item>
-        <item>Argentina</item>
-        <item>Wakanda</item>
+        <item>in Omaha Nebraska</item>
+        <item>on the Upper West Side</item>
+        <item>in New Orleans</item>
+        <item>in the depths of Eastern Siberia</item>
+        <item>at Cadillac Ranch</item>
+        <item>amidst the din of Haight Ashbury</item>
+        <item>in Argentina</item>
+        <item>on the south side of Wakanda</item>
         <item>Up the Wooden Hills to Bedfordshire</item>
-        <item>The food court</item>
-        <item>Fargo</item>
-        <item>The holy land</item>
-        <item>Mecca</item>
-        <item>Pierce Brosnan’s house</item>
-        <item>Outside Cincinnati</item>
-        <item>Euro Disney</item>
-        <item>Westworld</item>
-        <item>Outside Dallas</item>
-        <item>The Suez Canal</item>
-        <item>Waltham MA</item>
-        <item>The Country for Old Men</item>
-        <item>Pangea</item>
-
+        <item>in the food court</item>
+        <item>in Fargo</item>
+        <item>upon the holy land</item>
+        <item>toward Mecca</item>
+        <item>in Pierce Brosnan’s house</item>
+        <item>outside Cincinnati</item>
+        <item>in Euro Disney</item>
+        <item>at Westworld</item>
+        <item>outside Dallas</item>
+        <item>stuck in the Suez Canal</item>
+        <item>in Waltham MA</item>
+        <item>in The Country for Old Men</item>
+        <item>in Pangea</item>
+        <item>near Eliot Page\'s vegan lunch</item>
+        <item>Out on the weekend</item>
+        <item>in a Sokovian crawlspace</item>
+        <item>the field behind the dynamo</item>
+        <item>behind blue eyes</item>
+        <item>back to the front</item>
+        <item>the white eagle of the north\'s veranda</item>
+        <item>The frayed ends of sanity</item>
+        <item>Beneath your feet</item>
     </string-array>
 
     <string-array name="personality_text">
@@ -53,12 +61,17 @@
         <item>Eats salamanders</item>
         <item>Sorts by new</item>
         <item>Went on one of those Alaska boats one summer</item>
-
-
+        <item>Is not afraid to take a stand</item>
+        <item>Is indelibly carved into the memory of God</item>
+        <item>Plays force field</item>
+        <item>Will snap towel</item>
+        <item>Blessed with zest</item>
+        <item>Occasionally sleepy</item>
+        <item>Drank more than you spilled lightweight</item>
     </string-array>
 
     <string-array name="history">
-        <item>helping with the "Underground Railroad" somehow</item>
+        <item>helping with the \"Underground Railroad\" somehow</item>
         <item>evolved from pangolins</item>
         <item>subspecies nearly wiped out in Chicago Fire</item>
         <item>conspiring with the conquerors</item>
@@ -68,6 +81,14 @@
         <item>ate hallucinogens with the Partridge Family</item>
         <item>anti-communist rabblerouser</item>
         <item>the backup cat subspecies for the Meow Mix commercial</item>
+        <item>first centerfold in Cat Fancy magazine, 1974</item>
+        <item>weaponized by the CIA</item>
+        <item>first cat to purchase Deep Purple\'s LP \"Machine Head\"</item>
+        <item>Popped pills with Chris Martin</item>
+        <item>Co-wrote Citizen Kane</item>
+        <item>Disinterred Herman Cain</item>
+        <item>dated Willie Brown before and after Kamala</item>
+        <item>played triangle for Ween on tour in the latter half of  the year 2000</item>
     </string-array>
 
 </resources>

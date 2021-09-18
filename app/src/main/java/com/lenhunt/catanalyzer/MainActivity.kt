@@ -10,7 +10,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -60,10 +60,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         //called when user presses ALLOW or DENY from Permission Request Popup
         when(requestCode){
             _permissionCode -> {
-                if (grantResults.size > 0 && grantResults[0] ==
+                if (grantResults.isNotEmpty() && grantResults[0] ==
                     PackageManager.PERMISSION_GRANTED){
                     //permission from popup was granted
                     openCamera()
@@ -77,6 +78,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        //super.onActivityResult(requestCode, resultCode, data)
+        //  super.onActivityResult(requestCode, resultCode, data)
         //called when image was captured from camera intent
         if (resultCode == Activity.RESULT_OK){
             //set image captured to image view
@@ -86,9 +89,9 @@ class MainActivity : AppCompatActivity() {
             val locationStringArray = res.getStringArray(R.array.locations)
             val personalityStringArray = res.getStringArray(R.array.personality_text)
             val historyStringArray = res.getStringArray(R.array.history)
-            val selectedLocation = locationStringArray[(locationStringArray.indices).random()]
-            val selectedPersonality = personalityStringArray[(personalityStringArray.indices).random()]
-            val selectedHistory = historyStringArray[(historyStringArray.indices).random()]
+            val selectedLocation = locationStringArray[locationStringArray.indices.random()]
+            val selectedPersonality = personalityStringArray[personalityStringArray.indices.random()]
+            val selectedHistory = historyStringArray[historyStringArray.indices.random()]
 
             val textToOutput = "${res.getString(R.string.output_text_1)}${selectedLocation}. ${res.getString(R.string.output_text_2)}${selectedPersonality}. ${res.getString(R.string.output_text_3)}${selectedHistory}."
 
@@ -96,6 +99,7 @@ class MainActivity : AppCompatActivity() {
                 //textToOutput = textToOutput.plus(_imageURI.toString())
                 //textToOutput = textToOutput.plus("\nSize of Array arr is: ${locationStringArray.size}\n").plus(picture_container.height.toString())
             }
+
             picture_container_text.text = textToOutput
         }
     }
