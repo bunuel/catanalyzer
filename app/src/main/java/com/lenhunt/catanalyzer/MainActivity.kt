@@ -13,6 +13,14 @@ import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import android.view.View
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.util.Log
+import android.os.Environment
+import java.io.File
+import java.io.FileOutputStream
+import java.io.OutputStream
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,6 +67,86 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(cameraIntent, _imageCaptureCode)
     }
 
+    //val cardView = findViewById<CardView>(R.id.card_View)
+    //
+    //        // on click of this button it will capture
+    //          // screenshot and save into gallery
+    //        val captureButton = findViewById<Button>(R.id.btn_capture)
+    //        captureButton.setOnClickListener {
+    //            // get the bitmap of the view using
+    //              // getScreenShotFromView method it is
+    //            // implemented below
+    //            val bitmap = getScreenShotFromView(cardView)
+    //
+    //            // if bitmap is not null then
+    //              // save it to gallery
+    //            if (bitmap != null) {
+    //                saveMediaToStorage(bitmap)
+    //            }
+
+
+    private fun getScreenShotFromView(v: View): Bitmap? {
+        // create a bitmap object
+        var screenshot: Bitmap? = null
+        try {
+            // inflate screenshot object
+            // with Bitmap.createBitmap it
+            // requires three parameters
+            // width and height of the view and
+            // the background color
+            screenshot = Bitmap.createBitmap(v.measuredWidth, v.measuredHeight, Bitmap.Config.ARGB_8888)
+            // Now draw this bitmap on a canvas
+            val canvas = Canvas(screenshot)
+            v.draw(canvas)
+        } catch (e: Exception) {
+            Log.e("GFG", "Failed to capture screenshot because:" + e.message)
+        }
+        // return the bitmap
+        return screenshot
+    }
+
+    private fun saveMediaToStorage(bitmap: Bitmap) {
+        // Generating a file name
+        val filename = "${System.currentTimeMillis()}.jpg"
+
+        // Output stream
+        var fos: OutputStream? = null
+
+        // For devices running android >= Q
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // getting the contentResolver
+            this.contentResolver?.also { resolver ->
+
+                // Content resolver will process the contentvalues
+                val contentValues = ContentValues().apply {
+
+                    // putting file information in content values
+                    put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
+                    put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+                    put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
+                }
+
+                // Inserting the contentValues to
+                // contentResolver and getting the Uri
+                val imageUri: Uri? = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+                // Opening an outputstream with the Uri that we got
+                fos = imageUri?.let { resolver.openOutputStream(it) }
+            }
+        } else {
+            // These for devices running on android < Q
+            val imagesDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+            val image = File(imagesDir, filename)
+            fos = FileOutputStream(image)
+        }
+
+        fos?.use {
+            // Finally writing the bitmap to the output stream that we opened
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+            Toast.makeText(this , "Captured View and saved to Gallery" , Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         //called when user presses ALLOW or DENY from Permission Request Popup
@@ -84,7 +172,9 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK){
             //set image captured to image view
             picture_container.setImageURI(_imageURI)
-
+            button_save_result.visibility = View.VISIBLE
+            picture_container_text.visibility = View.VISIBLE
+            button_take_a_picture.text = getString(R.string.select_another_cat_text)
             val res: Resources = resources
             val locationStringArray = res.getStringArray(R.array.locations)
             val personalityStringArray = res.getStringArray(R.array.personality_text)

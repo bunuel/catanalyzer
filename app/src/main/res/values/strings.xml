@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Cat Type Identifier</string>
     <string name="select_a_cat_text">Take a cat picture</string>
+    <string name="select_another_cat_text">Take another cat picture</string>
+    <string name="capture_result_text">save this one</string>
 
     <string name="output_text_1">"This cat\'s ancient relatives resided "</string>
     <string name="output_text_2">"One distinctive feature of this breed:  "</string>
@@ -30,14 +32,14 @@
         <item>in The Country for Old Men</item>
         <item>in Pangea</item>
         <item>near Eliot Page\'s vegan lunch</item>
-        <item>Out on the weekend</item>
+        <item>out on the weekend</item>
         <item>in a Sokovian crawlspace</item>
-        <item>the field behind the dynamo</item>
+        <item>in the field behind the dynamo</item>
         <item>behind blue eyes</item>
-        <item>back to the front</item>
-        <item>the white eagle of the north\'s veranda</item>
-        <item>The frayed ends of sanity</item>
-        <item>Beneath your feet</item>
+        <item>around back to the front</item>
+        <item>on the white eagle of the north\'s veranda</item>
+        <item>within the frayed ends of sanity</item>
+        <item>beneath your feet</item>
     </string-array>
 
     <string-array name="personality_text">
