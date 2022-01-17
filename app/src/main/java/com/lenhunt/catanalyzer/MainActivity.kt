@@ -11,16 +11,17 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.View
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.util.Log
 import android.os.Environment
+import android.widget.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
+import androidx.core.app.ActivityCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +33,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //button click
+        // write permission to access the storage
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+
+        // val screenshotView: LinearLayout = findViewById(R.id.screenshot)
+        val screenshotView = findViewById<RelativeLayout>(R.id.screenshot)
+
+        // on click of this button it will capture
+        // screenshot and save into gallery
+        val captureButton = findViewById<Button>(R.id.button_save_result)
+
+        captureButton.setOnClickListener {
+            // get the bitmap of the view using
+            // getScreenShotFromView method it is
+            // implemented below
+            val bitmap = getScreenShotFromView(screenshotView)
+
+            // if bitmap is not null then
+            // save it to gallery
+            if (bitmap != null) {
+                saveMediaToStorage(bitmap)
+            }
+        }
+
         button_take_a_picture.setOnClickListener {
             //if system os is Marshmallow or Above, we need to request runtime permission
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -67,25 +91,7 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(cameraIntent, _imageCaptureCode)
     }
 
-    //val cardView = findViewById<CardView>(R.id.card_View)
-    //
-    //        // on click of this button it will capture
-    //          // screenshot and save into gallery
-    //        val captureButton = findViewById<Button>(R.id.btn_capture)
-    //        captureButton.setOnClickListener {
-    //            // get the bitmap of the view using
-    //              // getScreenShotFromView method it is
-    //            // implemented below
-    //            val bitmap = getScreenShotFromView(cardView)
-    //
-    //            // if bitmap is not null then
-    //              // save it to gallery
-    //            if (bitmap != null) {
-    //                saveMediaToStorage(bitmap)
-    //            }
-
-
-    private fun getScreenShotFromView(v: View): Bitmap? {
+     private fun getScreenShotFromView(v: View): Bitmap? {
         // create a bitmap object
         var screenshot: Bitmap? = null
         try {
@@ -166,6 +172,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        //super.onActivityResult(requestCode, resultCode, data)
         //super.onActivityResult(requestCode, resultCode, data)
         //  super.onActivityResult(requestCode, resultCode, data)
         //called when image was captured from camera intent

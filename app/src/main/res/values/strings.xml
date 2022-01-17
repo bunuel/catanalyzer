@@ -7,6 +7,7 @@
     <string name="output_text_1">"This cat\'s ancient relatives resided "</string>
     <string name="output_text_2">"One distinctive feature of this breed:  "</string>
     <string name="output_text_3">"Notable historical events include: "</string>
+    <string name="cat_picture_description">A picture of your cat</string>
 
     <string-array name="locations">
         <item>in Omaha Nebraska</item>
