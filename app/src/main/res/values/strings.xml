@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Cat Type Identifier</string>
     <string name="select_a_cat_text">Take a cat picture</string>
-    <string name="select_another_cat_text">Take another cat picture</string>
+    <string name="select_another_cat_text">"Take another
+cat picture"</string>
     <string name="capture_result_text">save this one</string>
 
     <string name="output_text_1">"This cat\'s ancient relatives resided "</string>

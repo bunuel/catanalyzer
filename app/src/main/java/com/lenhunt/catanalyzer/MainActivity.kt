@@ -22,6 +22,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
 import androidx.core.app.ActivityCompat
+// import com.lenhunt.catanalyzer.R.drawable.
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,9 +36,13 @@ class MainActivity : AppCompatActivity() {
 
         // write permission to access the storage
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
-        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+        }
 
-        // val screenshotView: LinearLayout = findViewById(R.id.screenshot)
+        picture_container.setImageResource(R.drawable.resource_default_cat_pic)
+        //picture_container_text.background = R.drawable.default_cat_pic
+
         val screenshotView = findViewById<RelativeLayout>(R.id.screenshot)
 
         // on click of this button it will capture
@@ -173,9 +178,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        //super.onActivityResult(requestCode, resultCode, data)
-        //super.onActivityResult(requestCode, resultCode, data)
-        //  super.onActivityResult(requestCode, resultCode, data)
+
         //called when image was captured from camera intent
         if (resultCode == Activity.RESULT_OK){
             //set image captured to image view

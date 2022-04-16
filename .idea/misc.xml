@@ -8,10 +8,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/default_cat_pic.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rounded_corners_button_take_a_picture.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rounded_corners_color_accent.xml" value="0.10572916666666667" />
         <entry key="app/src/main/res/drawable/rounded_corners_picture_container_text.xml" value="0.1" />
+        <entry key="app/src/main/res/font-v26/proxima.xml" value="0.11927083333333334" />
+        <entry key="app/src/main/res/font-v26/walkway.xml" value="0.11927083333333334" />
       </map>
     </option>
   </component>
