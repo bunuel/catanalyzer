@@ -6,23 +6,24 @@ import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import android.view.View
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.util.Log
 import android.os.Environment
+import android.provider.MediaStore
+import android.util.Log
+import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
-import androidx.core.app.ActivityCompat
-// import com.lenhunt.catanalyzer.R.drawable.
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,10 +42,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         picture_container.setImageResource(R.drawable.resource_default_cat_pic)
-        //picture_container_text.background = R.drawable.default_cat_pic
+
+        val drawable = ContextCompat.getDrawable(applicationContext, R.drawable.resource_default_cat_pic)
+        val width: Int = drawable!!.intrinsicWidth
+        val height: Int = drawable.intrinsicHeight
+
+        val param: RelativeLayout.LayoutParams = RelativeLayout.LayoutParams(width,height)
 
         val screenshotView = findViewById<RelativeLayout>(R.id.screenshot)
 
+        //screenshotView.forceLayout()
+        //picture_container.forceLayout()
         // on click of this button it will capture
         // screenshot and save into gallery
         val captureButton = findViewById<Button>(R.id.button_save_result)
