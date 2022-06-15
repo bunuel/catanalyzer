@@ -18,7 +18,6 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileOutputStream
@@ -43,16 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         picture_container.setImageResource(R.drawable.resource_default_cat_pic)
 
-        val drawable = ContextCompat.getDrawable(applicationContext, R.drawable.resource_default_cat_pic)
-        val width: Int = drawable!!.intrinsicWidth
-        val height: Int = drawable.intrinsicHeight
-
-        val param: RelativeLayout.LayoutParams = RelativeLayout.LayoutParams(width,height)
-
         val screenshotView = findViewById<RelativeLayout>(R.id.screenshot)
 
-        //screenshotView.forceLayout()
-        //picture_container.forceLayout()
         // on click of this button it will capture
         // screenshot and save into gallery
         val captureButton = findViewById<Button>(R.id.button_save_result)
